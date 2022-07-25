@@ -4,7 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Agenda</title>
 	<script src="https://kit.fontawesome.com/e1ca0213f0.js" crossorigin="anonymous"></script>
-   <link href="https://cdn.neiglobal.com/content/include/css/nei-meetings.css" type="text/css" media="all" rel="stylesheet"/>
+    <link href="https://cdn.neiglobal.com/content/include/css/nei-meetings.css" type="text/css" media="all" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
    <style>
       * {
       scroll-behavior: smooth;
@@ -12,7 +15,7 @@
 	}
 
     .agenda h1, .agenda h2, .agenda h3, .agenda h4, .agenda p, .agenda ul, .agenda ol, .agenda a, .agenda span, .agenda mark, .agenda th, .agenda td, .agenda tr, .agenda thead  {
-	font-family: Avenir, Arial, Helvetica, sans-serif;
+	font-family: Avenir, 'Nunito Sans', Arial, Helvetica, sans-serif;
 	color: #3D474D;
 	line-height: normal;
 	box-sizing: border-box;
@@ -29,6 +32,18 @@
 
  .agenda hr {
      border: 1px #e2e5e7 solid;
+     color: unset;
+     height: unset;
+     clear: none;
+     margin: 0;
+ }
+
+ .agenda h4 {
+     font-size: 16px;
+ }
+
+ .agenda p {
+     padding: 0;
  }
 
  .agenda {
@@ -38,10 +53,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
  }
 
  .agenda_container {
     margin: 20px 50px;
+
  }
 
  .agenda_event {
@@ -49,16 +66,21 @@
     flex-wrap: nowrap;
  }
 
+ .agenda_title {
+     width: 100%;
+ }
+
  .agenda_time, .agenda_description {
     padding: 20px 50px 20px 0px;
  }
 
  .agenda_time {
-    width: 150px;
+    width: 160px;
  }
 
  .agenda_description {
      width: 500px;
+
  }
 
 a.agenda_presenter_link {
@@ -67,7 +89,7 @@ a.agenda_presenter_link {
 
 .tag_cme_ce, .tag_industry_symp, .tag_special {
     display: inline-block;
-    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-family: Avenir, 'Nunito Sans', Arial, Helvetica, sans-serif;
     line-height: normal;
     color: white;
     width: fit-content;
@@ -92,21 +114,25 @@ a.agenda_presenter_link {
 }
 
     .filter_container {
-        padding: 50px 50px 50px 50px;
+        padding: 10px 50px 0px 50px;
         overflow: hidden;
+
     }
 
     .filterDiv {
     display: none;
+
     
     }
 
     .show {
     display: flex;
+
+   
     }
 
     .btn {
-        font-family: Avenir, Arial, Helvetica, sans-serif;
+        font-family: Avenir, 'Nunito Sans', Arial, Helvetica, sans-serif;
         font-size: 10px;
         font-weight: 900;
         border: none;
@@ -126,373 +152,411 @@ a.agenda_presenter_link {
         color: white;
     }
 
+    .cme_ce.btn.active {
+        background-color: #4995d4;
+        color: white;
+    }
+
+    .industry.btn.active {
+        background-color: #df9744;
+        color: white;
+    }
+
+    .special.btn.active {
+        background-color: #aed453;
+        color: white;
+    }
+
+.agenda_header {
+    margin: 50px 0px 0px 0px;
+    text-align: center;
+}
+
+.agenda_day_btns {
+    margin: 20px 0px 40px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.agenda_day_btn {
+    font-family: Avenir, 'Nunito Sans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #FFF;
+    text-align: center;
+    margin: 10px;
+    padding: 12px;
+    background-color: #729fb9;
+    border-radius: 5px;
+    width: 120px;
+    
+}
+
+.agenda_day_btns a  {
+    text-decoration: none;
+}
+
+.agenda_day_btn:hover {
+    background-color: #5d89a3;
+}
+
+.agenda_paragraph {
+    margin: 0px 50px 10px 50px;
+}
+
+
+.to_top_btn {
+    height: 50px;
+    width: 50px;
+    background-color: #dadbdb;
+    border: none;
+    border-radius: 5px;
+    right: 0;
+    bottom: 0;
+    margin: 50px;
+    z-index: 100;
+    opacity: 1;
+    transition: all .5s ease
+}
+
+.to_top_btn img {
+    height: 20px;
+    width: 18px;
+}
+
+.to_top_btn:hover{
+    background-color: #bebebe;
+}
 
    </style>
 </head>
 
 <body>
 	<div class="agenda"> 
+        <div class="agenda_header"><h1>Agenda</h1></div>
+        
+        <div class="agenda_day_btns">
+            <a href="#friday"><div class="agenda_day_btn">Friday, April 22</div></a>
+            <a href="#saturday"><div class="agenda_day_btn">Saturday, April 23</div></a>
+            <a href="#sunday"><div class="agenda_day_btn">Sunday, April 24</div> </a>           
+        </div>
+
+
+        <div class="agenda_paragraph"><p><small>All sessions will be held in <a href="https://time.is/Austin" style="font-size: 11px;">Central Time (CT)</a>. The agenda is subject to change.</small></p></div>
+
         <div class="filter_container" id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+<!--             <button class="btn active" onclick="filterSelection('all')"> Show all</button>
             <button class="btn" onclick="filterSelection('april21')"> Thursday</button>
             <button class="btn" onclick="filterSelection('april22')"> Friday</button>
             <button class="btn" onclick="filterSelection('april23')"> Saturday</button>
             <button class="btn" onclick="filterSelection('april24')"> Sunday</button>
-            <br><br>            
-            <button class="btn" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn" onclick="filterSelection('cme_ce')"> CME/CE</button>
-            <button class="btn" onclick="filterSelection('industry')"> Industry</button>
-            <button class="btn" onclick="filterSelection('special')"> Special</button>
-            <button class="btn" onclick="filterSelection('misc')"> Misc</button>
+            <br><br>    -->         
+            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn cme_ce" onclick="filterSelection('cme_ce')"> CME/CE Session</button>
+            <button class="btn industry" onclick="filterSelection('industry')"> Industry-Sponsored (non-CME/CE)</button>
+            <button class="btn special" onclick="filterSelection('special')"> Special Event</button>
         </div>
 
         <div class="agenda_container">
             <div class="filterDiv april21 cme_ce industry special misc">
-                <div>
+                <div class="agenda_title">
                     <h3>Thursday, April 21</h3>
                     <hr>
                     <br>                       
                 </div>
             </div>
             <div class="agenda_event filterDiv april21 misc">
-                <div class="agenda_time"><p>3:00pm - 5:30pm</p></div>
+                <div class="agenda_time"><p>3:00 pm - 5:30 pm</p></div>
                 <div class="agenda_description">
                     <h4>Early Check-In</h4>
                 </div>
             </div>
         </div>
 
-        <div class="agenda_container">
+        <div class="agenda_container" id="friday">
             <div class="filterDiv april22 cme_ce industry special misc">
-                <div>
+                <div class="agenda_title">
                     <h3>Friday, April 22</h3>
                     <hr>
                     <br>                    
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 misc">
-                <div class="agenda_time"><p>7:00am - 8:30am</p></div>
+                <div class="agenda_time"><p>7:00 am - 8:30 am</p></div>
                 <div class="agenda_description">
                     <h4>Check-In</h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 industry">
-                <div class="agenda_time"><p>7:30am - 8:30am</p></div>
+                <div class="agenda_time"><p>7:30 am - 8:30 am</p></div>
                 <div class="agenda_description">
                     <h4>Breakfast Industry Symposium†</h4>
-                    <div class="tag_industry_symp">Industry Symposia</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
+<!--                     <br><br>
+                    <p><a href="#" class="agenda_presenter_link ">Andrew J. Cutler</a>, MD; <a href="#" class="agenda_presenter_link ">Leslie Citrome</a>, MD, MPH</p>
                     <br>
-                    <p><i>Sponsored by Company Name</i></p>
+                    <p><i>Sponsored by Company Name</i></p> -->
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 misc">
-                <div class="agenda_time"><p>8:40am - 8:45am</p></div>
+                <div class="agenda_time"><p>8:40 am - 8:45 am</p></div>
                 <div class="agenda_description">
-                    <h4>Opening Comments</h4>
+                    <h4>Opening Remarks</h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 cme_ce">
-                <div class="agenda_time"><p>8:45am - 9:45am</p></div>
+                <div class="agenda_time"><p>8:45 am - 9:45 am</p></div>
                 <div class="agenda_description">
                     <h4>Bipolar Disorder Rainbow: The Spectrum of Treatments for Depression and Mania </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 misc">
-                <div class="agenda_time"><p>9:45am - 10:30am</p></div>
+                <div class="agenda_time"><p>9:45 am - 10:30 am</p></div>
                 <div class="agenda_description">
                     <h4>Networking Break / Exhibit Hall Open </h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 cme_ce">
-                <div class="agenda_time"><p>10:30am - 11:15am</p></div>
+                <div class="agenda_time"><p>10:30 am - 11:15 am</p></div>
                 <div class="agenda_description">
                     <h4>Move It On Over: Diagnosing and Treating Tardive Dyskinesia </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 cme_ce">
-                <div class="agenda_time"><p>11:15am - 12:00pm</p></div>
+                <div class="agenda_time"><p>11:15 am - 12:00 pm</p></div>
                 <div class="agenda_description">
                     <h4>Anger Aside: Dealing with Agitation in People with Schizophrenia or Bipolar Disorder </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 industry">
-                <div class="agenda_time"><p>12:00pm - 1:00pm</p></div>
+                <div class="agenda_time"><p>12:15 pm - 1:15 pm</p></div>
                 <div class="agenda_description">
-                    <h4>Lunch Industry Symposium†</h4>
-                    <div class="tag_industry_symp">Industry Symposia</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
+                    <h4>Lunch Industry Symposium† / Exhibit Hall Open</h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
                     <br>
-                    <p><i>Sponsored by Some Guys</i></p>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 cme_ce">
-                <div class="agenda_time"><p>1:15pm - 2:00pm</p></div>
+                <div class="agenda_time"><p>1:30 pm - 2:15 pm</p></div>
                 <div class="agenda_description">
                     <h4>The Betrayal of Burnout and Building Psychological Flexibility</h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 misc">
-                <div class="agenda_time"><p>2:00pm - 2:30pm</p></div>
+                <div class="agenda_time"><p>2:15 pm - 2:45 pm</p></div>
                 <div class="agenda_description">
                     <h4>Networking Break / Exhibit Hall Open </h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 cme_ce">
-                <div class="agenda_time"><p>2:30pm - 3:15pm</p></div>
+                <div class="agenda_time"><p>2:45 pm - 3:30 pm</p></div>
                 <div class="agenda_description">
                     <h4>Jeopardy! Long-Acting Injectables</h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 cme_ce">
-                <div class="agenda_time"><p>3:15pm - 4:15pm</p></div>
+                <div class="agenda_time"><p>3:30 pm - 4:30 pm</p></div>
                 <div class="agenda_description">
                     <h4>Throughout the Lifespan: Optimizing Treatment for ADHD </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 misc">
-                <div class="agenda_time"><p>4:15pm - 4:45pm</p></div>
+                <div class="agenda_time"><p>4:30 pm - 5:00 pm</p></div>
                 <div class="agenda_description">
                     <h4>Networking Break / Exhibit Hall Open </h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 cme_ce">
-                <div class="agenda_time"><p>4:45pm - 5:30pm</p></div>
+                <div class="agenda_time"><p>5:00 pm - 5:45 pm</p></div>
                 <div class="agenda_description">
                     <h4>Ups and Downs: Diagnosing and Treating Depression Throughout the Female Lifespan </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 special cme_ce">
-                <div class="agenda_time"><p>5:30pm - 6:30pm</p></div>
+                <div class="agenda_time"><p>5:45 pm - 6:45 pm</p></div>
                 <div class="agenda_description">
                     <h4>Remember Bekah: Interview with a Suicide Fighter</h4>
                     <div class="tag_special">Special Event</div><div class="tag_cme_ce">CME/CE Session</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
                 </div>
             </div>
             <div class="agenda_event filterDiv april22 industry">
-                <div class="agenda_time"><p>6:30pm - 7:30pm</p></div>
+                <div class="agenda_time"><p>7:00 pm - 8:00 pm</p></div>
                 <div class="agenda_description">
                     <h4>Dinner Industry Symposium†</h4>
-                    <div class="tag_industry_symp">Industry Symposia</div>
-                    <ul>
-                        <li><a href="#" class="agenda_presenter_link">Andrew J. Cutler</a>, MD</li>
-                        <li><a href="#" class="agenda_presenter_link">Leslie Citrome</a>, MD, MPH</li>
-                    </ul>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
                     <br>
-                    <p><i>Sponsored by Some Guys</i></p>
                 </div>
             </div>
             
         </div>
 
-        <div class="agenda_container">
+        <div class="agenda_container" id="saturday">
             <div class="filterDiv april23 cme_ce industry special misc">
-                <div>
+                <div class="agenda_title">
                     <h3>Saturday, April 23</h3>
                     <hr>
                     <br>                    
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 industry">
-                <div class="agenda_time"><p>7:00am - 8:00am</p></div>
+                <div class="agenda_time"><p>7:00 am - 8:00 am</p></div>
                 <div class="agenda_description">
                     <h4>Breakfast Industry Symposium†</h4>
-                    <div class="tag_industry_symp">Industry Symposia</div>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 misc">
-                <div class="agenda_time"><p>8:10am - 8:15am</p></div>
+                <div class="agenda_time"><p>8:10 am - 8:15 am</p></div>
                 <div class="agenda_description">
-                    <h4>Opening Comments</h4>
+                    <h4>Opening Remarks</h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 cme_ce">
-                <div class="agenda_time"><p>8:15am - 9:15am</p></div>
+                <div class="agenda_time"><p>8:15 am - 9:15 am</p></div>
                 <div class="agenda_description">
                     <h4>Too Much or Too Little: Sleep Issues and How to Treat Them</h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 cme_ce">
-                <div class="agenda_time"><p>9:15am - 10:15am</p></div>
+                <div class="agenda_time"><p>9:15 am - 10:15 am</p></div>
                 <div class="agenda_description">
                     <h4>Titration Negotiation: Switching Antipsychotics in People with Schizophrenia </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 misc">
-                <div class="agenda_time"><p>10:15am - 10:45am</p></div>
+                <div class="agenda_time"><p>10:15 am - 10:45 am</p></div>
                 <div class="agenda_description">
                     <h4>Networking Break / Exhibit Hall Open </h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 cme_ce">
-                <div class="agenda_time"><p>10:45am - 12:00pm</p></div>
+                <div class="agenda_time"><p>10:45 am - 12:00 pm</p></div>
                 <div class="agenda_description">
                     <h4>Aiming for Recovery: Optimizing Treatment for Major Depressive Disorder </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 industry">
-                <div class="agenda_time"><p>12:00pm - 1:00pm</p></div>
+                <div class="agenda_time"><p>12:15 pm - 1:15 pm</p></div>
                 <div class="agenda_description">
-                    <h4>Lunch Industry Symposium†</h4>
-                    <div class="tag_industry_symp">Industry Symposia</div>
+                    <h4>Lunch Industry Symposium† / Exhibit Hall Open</h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 cme_ce">
-                <div class="agenda_time"><p>1:15pm - 2:15pm</p></div>
+                <div class="agenda_time"><p>1:30 pm - 2:30 pm</p></div>
                 <div class="agenda_description">
                     <h4>Uploading Progress: Technology in Psychiatry </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 cme_ce">
-                <div class="agenda_time"><p>2:15pm - 3:15pm</p></div>
+                <div class="agenda_time"><p>2:30 pm - 3:30 pm</p></div>
                 <div class="agenda_description">
                     <h4>Maximizing Success for Patients with Serious Mental Illness: Promoting Treatment Engagement and Adherence to Antipsychotic Medications</h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 misc">
-                <div class="agenda_time"><p>3:15pm - 4:00pm</p></div>
+                <div class="agenda_time"><p>3:30 pm - 4:15 pm</p></div>
                 <div class="agenda_description">
                     <h4>Networking Break / Exhibit Hall Open </h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 cme_ce">
-                <div class="agenda_time"><p>4:00pm - 5:15pm</p></div>
+                <div class="agenda_time"><p>4:15 pm - 5:30 pm</p></div>
                 <div class="agenda_description">
                     <h4>Make New Friends, But Keep the Old: Optimizing Antipsychotic Treatments for Schizophrenia </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 cme_ce">
-                <div class="agenda_time"><p>5:15pm - 6:15pm</p></div>
+                <div class="agenda_time"><p>5:30 pm - 6:30 pm</p></div>
                 <div class="agenda_description">
                     <h4>The Long Haul: COVID Complications </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april23 industry">
-                <div class="agenda_time"><p>5:15pm - 6:15pm</p></div>
+                <div class="agenda_time"><p>6:45 pm - 7:45 pm</p></div>
                 <div class="agenda_description">
                     <h4>Dinner Industry Symposium†</h4>
-                    <div class="tag_industry_symp">Industry Symposia</div>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
                 </div>
             </div>
         </div>
 
-        <div class="agenda_container">
+        <div class="agenda_container" id="sunday">
             <div class="filterDiv april24 cme_ce industry special misc">
-                <div>
+                <div class="agenda_title">
                     <h3>Sunday, April 24</h3>
                     <hr>
                     <br>                    
                 </div>
             </div>
             <div class="agenda_event filterDiv april24 industry">
-                <div class="agenda_time"><p>7:00am - 8:00am</p></div>
+                <div class="agenda_time"><p>7:00 am - 8:00 am</p></div>
                 <div class="agenda_description">
                     <h4>Breakfast Industry Symposium†</h4>
-                    <div class="tag_industry_symp">Industry Symposia</div>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april24 misc">
-                <div class="agenda_time"><p>8:10am - 8:15am</p></div>
+                <div class="agenda_time"><p>8:10 am - 8:15 am</p></div>
                 <div class="agenda_description">
-                    <h4>Opening Comments</h4>
+                    <h4>Opening Remarks</h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april24 cme_ce">
-                <div class="agenda_time"><p>8:15am - 9:15am</p></div>
+                <div class="agenda_time"><p>8:15 am - 9:30 am</p></div>
                 <div class="agenda_description">
                     <h4>Everything Hurts: Pain Management in the Context of Psychiatric Comorbidities </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
-            <div class="agenda_event filterDiv april24 cme_ce">
-                <div class="agenda_time"><p>9:15am - 10:00am</p></div>
-                <div class="agenda_description">
-                    <h4>ACT Like You Mean It: Assertive Community Treatment in Action</h4>
-                    <div class="tag_cme_ce">CME/CE Session</div>
-                </div>
-            </div>
             <div class="agenda_event filterDiv april24 misc">
-                <div class="agenda_time"><p>10:00am - 10:15am</p></div>
+                <div class="agenda_time"><p>9:30 am - 9:45 am</p></div>
                 <div class="agenda_description">
-                    <h4>Networking Break / Exhibit Hall Open </h4>
+                    <h4>Networking Break </h4>
                 </div>
             </div>
             <div class="agenda_event filterDiv april24 cme_ce">
-                <div class="agenda_time"><p>10:15am - 11:15am</p></div>
+                <div class="agenda_time"><p>9:45 am - 11:00 am</p></div>
                 <div class="agenda_description">
-                    <h4>Psychiatry and Medical Malpractice: A Survival Guide </h4>
+                    <h4>TBD</h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april24 cme_ce">
-                <div class="agenda_time"><p>11:15am - 12:15pm</p></div>
+                <div class="agenda_time"><p>11:00 am - 12:15 pm</p></div>
                 <div class="agenda_description">
                     <h4>Biggest Mistakes in Psychopharm  </h4>
                     <div class="tag_cme_ce">CME/CE Session</div>
                 </div>
             </div>
             <div class="agenda_event filterDiv april24 misc">
-                <div class="agenda_time"><p>8:10am - 8:15am</p></div>
+                <div class="agenda_time"><p>12:15pm  </p></div>
                 <div class="agenda_description">
                     <h4>Closing Remarks</h4>
                 </div>
             </div>
         </div>
 
+        <div class="agenda_paragraph"><br><br><p><small style="color: #df9744;">†The content of all Industry-Sponsored non-CME/CE events (Industry Symposia, Disease State Sessions, and Poster Sessions) and the views expressed therein are those of the presenting entity and not of NEI. Non-CME/CE events are not part of the scientific program and do not provide CME/CE credit. By attending or opening a non-CME/CE event, the attendee opts in to receive follow-up information from the commercial sponsor. Any meals are provided by NEI.</small></p></div>
+   
+        <div class="to_top_container"><button class="to_top_btn" id="toTop"><img src="https://cdn.neiglobal.com/content/website/images/to_top_arrow_white.png"></button></div>
+        
 
-   </div>
+        </button>
+    </div>
 
    <script>
     // Filter by Feature
@@ -537,6 +601,22 @@ a.agenda_presenter_link {
         this.className += " active";
       });
     }
+
+
+    //Scroll to Top BTN
+
+
+    var scrollToTopBtn = document.getElementById("toTop");
+    var rootElement = document.documentElement;
+
+    function scrollToTop() {
+    // Scroll to top logic
+    rootElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+    }
+    scrollToTopBtn.addEventListener("click", scrollToTop);
 
     </script>
 

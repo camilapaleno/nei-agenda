@@ -1,0 +1,68 @@
+<style>
+    .to_top_btn {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(159, 182, 189);
+    border: none;
+    border-radius: 5px;
+    right: 0;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 50px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all .5s ease
+}
+
+.to_top_btn img {
+    height: 20px;
+    width: 18px;
+}
+
+.to_top_btn:hover{
+    background-color: rgb(110, 133, 139);
+}
+
+    .show_to_top_btn {
+        opacity: 1;
+        transform: translateY(0)
+    }
+</style>
+
+<script>
+        //Scroll to Top BTN
+
+
+        var scrollToTopBtn = document.getElementById("toTop");
+    var rootElement = document.documentElement;
+
+    function scrollToTop() {
+    // Scroll to top logic
+    rootElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+    }
+    scrollToTopBtn.addEventListener("click", scrollToTop);
+
+
+    var rootElement = document.documentElement
+
+    function handleScroll() {
+    // Do something on scroll
+    var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+    if ((rootElement.scrollTop / scrollTotal ) > 0.50 ) {
+        // Show button
+        scrollToTopBtn.classList.add("show_to_top_btn")
+    } else {
+        // Hide button
+        scrollToTopBtn.classList.remove("show_to_top_btn")
+    }
+    }
+
+    document.addEventListener("scroll", handleScroll)
+</script>
+
+<div class="to_top_container"><button class="to_top_btn" id="toTop"><img src="https://cdn.neiglobal.com/content/website/images/to_top_arrow_white.png"></button></div>

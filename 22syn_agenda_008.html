@@ -1,0 +1,905 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Agenda</title>
+	<script src="https://kit.fontawesome.com/e1ca0213f0.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.neiglobal.com/content/include/css/nei-meetings.css" type="text/css" media="all" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+        scroll-behavior: smooth;
+        margin: 0;
+      }
+  
+      .syn22_body_fixed h1, .syn22_body_fixed h2, .syn22_body_fixed h3, .syn22_body_fixed h4, .syn22_body_fixed p, .syn22_body_fixed ul, .syn22_body_fixed ol, .syn22_body_fixed a, .syn22_body_fixed span, .syn22_body_fixed mark, .syn22_body_fixed th, .syn22_body_fixed td, .syn22_body_fixed tr, .syn22_body_fixed thead  {
+      font-family: Avenir, Arial, Helvetica, sans-serif;
+      color: #3D474D;
+      line-height: normal;
+      box-sizing: border-box;
+   
+   }
+   
+   .syn22_body_fixed h4 {
+      font-size: 16px;
+   }
+   
+   .syn22_body_fixed p {
+      line-height: 160%;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+   }
+   
+   .syn22_body_fixed ul, .syn22_body_fixed ol {
+      padding: 5px 0px 0px 0px;
+      font-size: 16px;
+   }
+   
+   .syn22_body_fixed li {
+      margin-left: 20px;
+      padding: 0px 0px 5px 0px;
+      font-size: 16px;
+   }
+   
+   .syn22_body_fixed a {
+      color: #D96941;
+      font-size: 16px;
+   }
+   
+   .syn22_body_fixed a:hover {
+      color: #c5552c;
+      font-size: 16px;
+   }
+   
+   .syn22_body_fixed mark {
+      background-color: #fae4a9; 
+      font-size: 16px;
+   }
+   
+   .syn22_body_fixed .center {
+      text-align: center;
+   }
+   
+   .syn22_body_fixed .nomargin {
+      margin: 0;
+   }
+  
+   .syn22_body_fixed hr {
+       border: 1px #ece2d5 solid;
+   }
+   
+   /* Congress 2022 Color Styles */
+   
+   .syn22_body_fixed .darkblue {
+      color: #4E84A6;
+   }
+   
+   .syn22_body_fixed .lightblue {
+      color: #7AACBF;
+   }
+   
+   .syn22_body_fixed .green {
+      color: #496C4D;
+   }
+   
+   .syn22_body_fixed .yellow {
+      color: #F2B077;
+   }
+   
+   .syn22_body_fixed .orange {
+      color: #f07630;
+   }
+   
+   .syn22_body_fixed .red {
+      color: #A6554E;
+   }
+   
+   .syn22_body_fixed .lightblue_bkg {
+      background-color: #eef2f7;
+   }
+   .syn22_body_fixed .lightyellow_bkg {
+      background-color: #f8f3ea;
+   }
+   .syn22_body_fixed .lightgereen_bkg {
+      background-color: #edf1ef;
+   }
+   .syn22_body_fixed .bkg {
+      background-color: #f7f5f1;
+   }
+   
+   
+   /* Congress 2022 Body, Header, Section Styles */
+   
+   .syn22_body_fixed {
+      background-color: rgb(252, 252, 252);
+      width: 750px;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+   }
+   
+   .syn22_header {
+      width: 100%;
+      text-align: center;
+   }
+   
+      .syn22_header img {
+         width: 80%;
+         margin: 40px auto;
+      }
+   
+   .syn22_page_heading {
+      display: flex;
+      align-items: center;
+      padding: 0px 50px;
+   }
+   
+      .syn22_page_heading h1 {
+         font-size: 32px;
+         color: #3D474D;
+      }
+   
+      .syn22_page_heading img {
+         width: 70px;
+         margin-right: 10px;
+      }
+   
+   .syn22_paragraph {
+      width: 100%;
+      text-align: left;
+      margin: 20px auto;
+      padding: 0px 50px;
+      box-sizing: border-box;
+   }
+   
+   .syn22_flex_2 {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 50px;
+      margin: 50px 0px;
+   }
+   
+      .syn22_flex_2 .boxes {
+         width: 230px;
+         padding: 50px 40px;
+         border-radius: 10px;
+         text-align: center;
+      }
+   
+      .syn22_flex_2 .boxes p {
+         font-size: 14px;
+      }
+   
+   .syn22_flex_3 {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 50px;
+      margin: 50px 0px;
+   }
+   
+   .syn22_flex_title {
+      text-align: center; 
+      position: absolute; 
+      width: 100%; 
+      margin: 20px -40px; 
+      padding-top: 20px;
+   }
+   
+   .syn22_icon_text {
+      padding: 60px 20px;
+      text-align: center;
+      
+   }
+   
+      .syn22_icon_text img {
+         width: 60px;
+         margin: 0 auto;
+      }
+   
+   #submit_abstract_bkg {
+      padding: 40px; 
+      margin: 0 50px; 
+      border-radius: 10px;
+   }
+   
+   .syn22_flex_4 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: space-around;
+   }
+  
+   .syn22_flex_4 h4, .syn22_flex_4 p, .syn22_flex_4 a, .syn22_flex_4 a:hover{
+      font-size: 14px;
+   }
+  
+   </style>
+   
+   <style>
+      * {
+      scroll-behavior: smooth;
+      margin: 0;
+	}
+
+    .agenda h1, .agenda h2, .agenda h3, .agenda h4, .agenda p, .agenda ul, .agenda ol, .agenda a, .agenda span, .agenda mark, .agenda th, .agenda td, .agenda tr, .agenda thead  {
+	font-family: Avenir LT Pro, Avenir, 'Nunito Sans', Arial, Helvetica, sans-serif;
+	color: #3D474D;
+	line-height: normal;
+	box-sizing: border-box;
+ 
+ }
+
+ .agenda p, .agenda ul, .agenda ol, .agenda a, .agenda span {
+     font-size: 14px;
+ }
+
+ .agenda ul {
+     padding: 10px 0px 0px 20px;
+ }
+
+ .agenda hr {
+     border: 1px #e2e5e7 solid;
+     color: unset;
+     height: unset;
+     clear: none;
+     margin: 0;
+ }
+
+ .agenda h4 {
+     font-size: 16px;
+ }
+
+ .agenda p {
+     padding: 0;
+ }
+
+ .agenda {
+	width: 750px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    background-color: rgb(252, 252, 252);
+
+ }
+
+ .agenda_container {
+    margin: 20px 50px;
+
+ }
+
+ .agenda_event {
+     display: flex;
+    flex-wrap: nowrap;
+ }
+
+ .agenda_title {
+     width: 100%;
+ }
+
+ .agenda_time, .agenda_description {
+    padding: 20px 50px 20px 0px;
+ }
+
+ .agenda_time {
+    width: 170px;
+ }
+
+ .agenda_description {
+     width: 500px;
+
+ }
+
+a.agenda_presenter_link {
+    color: #687688;
+    text-decoration: none;
+}
+
+.tag_cme_ce, .tag_industry_symp, .tag_special {
+    display: inline-block;
+    font-family: Avenir, 'Nunito Sans', Arial, Helvetica, sans-serif;
+    line-height: normal;
+    color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    font-size: 9px;
+    border-radius: 5px;
+    font-weight: 900;
+    margin: 10px 10px 0px 0px;
+}
+ 
+.tag_cme_ce {
+    background-color: #4995d4;
+
+}
+
+.tag_industry_symp {
+    background-color: #df9744;
+}
+
+.tag_special {
+    background-color:#aed453
+}
+
+    .filter_container {
+        padding: 10px 50px 0px 50px;
+        overflow: hidden;
+    }
+
+    .filterDiv {
+    display: none;
+    }
+
+    .show {
+    display: flex;
+   
+    }
+
+    .btn {
+        font-family: Avenir, 'Nunito Sans', Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        font-weight: 900;
+        border: none;
+        outline: none;
+        padding: 5px 12px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        background-color: #ddd;
+    }
+
+    .btn.selected {
+        background-color: #666;
+        color: white;
+    }
+
+    .cme_ce.btn.selected {
+        background-color: #4995d4;
+        color: white;
+    }
+
+    .industry.btn.selected {
+        background-color: #df9744;
+        color: white;
+    }
+
+    .special.btn.selected {
+        background-color: #aed453;
+        color: white;
+    }
+
+.agenda_header {
+    margin: 50px 0px 0px 0px;
+    text-align: center;
+}
+
+.agenda_day_btns {
+    margin: 0px 0px 40px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.agenda_day_btn {
+    font-family: Avenir, 'Nunito Sans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #FFF;
+    text-align: center;
+    margin: 10px;
+    padding: 12px;
+    background-color: #729fb9;
+    border-radius: 5px;
+    width: 120px;
+    
+}
+
+.agenda_day_btns a  {
+    text-decoration: none;
+}
+
+.agenda_day_btn:hover {
+    background-color: #5d89a3;
+}
+
+.agenda_paragraph {
+    margin: 0px 50px 10px 50px;
+}
+
+
+.to_top_btn {
+    height: 50px;
+    width: 50px;
+    background-color: #dadbdb;
+    border: none;
+    border-radius: 5px;
+    right: 0;
+    bottom: 0;
+    margin: 50px;
+    z-index: 100;
+    opacity: 1;
+    transition: all .5s ease
+}
+
+.to_top_btn img {
+    height: 20px;
+    width: 18px;
+}
+
+.to_top_btn:hover{
+    background-color: #bebebe;
+}
+
+   </style>
+</head>
+
+<body>
+    <div class="syn22_body_fixed">
+		<div class="syn22_header"><a href="/Default.aspx?tabname=SynLiveOverview"><img src="https://cdn.neiglobal.com/content/website/images/22syn/22syn-header-2100x500.png" alt="synapse_home" /></a></div>
+	
+		<div class="syn22_page_heading">
+			<div><img src="https://cdn.neiglobal.com/content/website/images/22syn/22syn-icon-agenda-180x180.png" alt="FAQ_icon"></div>
+			<div><h1>Agenda</h1></div>
+		 </div>
+         <br>
+    </div>
+
+	<div class="agenda"> 
+
+        
+        <div class="agenda_day_btns">
+            <a href="#friday"><div class="agenda_day_btn">Friday, April 22</div></a>
+            <a href="#saturday"><div class="agenda_day_btn">Saturday, April 23</div></a>
+            <a href="#sunday"><div class="agenda_day_btn">Sunday, April 24</div> </a>           
+        </div>
+
+
+        <div class="agenda_paragraph"><p><small>All sessions will be held in <a href="https://time.is/Austin" style="font-size: 11px;">Central Time (CT)</a>. The agenda is subject to change.</small></p></div>
+
+        <div class="filter_container" id="myBtnContainer">
+<!--             <button class="btn selected" onclick="filterSelection('all')"> Show all</button>
+            <button class="btn" onclick="filterSelection('april21')"> Thursday</button>
+            <button class="btn" onclick="filterSelection('april22')"> Friday</button>
+            <button class="btn" onclick="filterSelection('april23')"> Saturday</button>
+            <button class="btn" onclick="filterSelection('april24')"> Sunday</button>
+            <br><br>    -->         
+            <button class="btn selected" onclick="filterSelection('all')" type="button"> Show all</button>
+            <button class="btn cme_ce" onclick="filterSelection('cme_ce')" type="button"> CME/CE Session</button>
+            <button class="btn industry" onclick="filterSelection('industry')" type="button"> Industry-Sponsored (non-CME/CE)</button>
+            <button class="btn special" onclick="filterSelection('special')" type="button"> Special Event</button>
+        </div>
+
+        <div class="agenda_container">
+            <div class="filterDiv april21 cme_ce industry special misc">
+                <div class="agenda_title">
+                    <h3>Thursday, April 21</h3>
+                    <hr>
+                    <br>                       
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april21 misc">
+                <div class="agenda_time"><p>3:00 pm - 5:30 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Early Check-In</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april21 misc">
+                <div class="agenda_time"><p>5:00 pm - 7:00 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Industry Poster Reception</h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
+                    <br><br>
+                    <p><i>Sponsored by Sunovion</i></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="agenda_container" id="friday">
+            <div class="filterDiv april22 cme_ce industry special misc">
+                <div class="agenda_title">
+                    <h3>Friday, April 22</h3>
+                    <hr>
+                    <br>                    
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 misc">
+                <div class="agenda_time"><p>7:00 am - 8:30 am</p></div>
+                <div class="agenda_description">
+                    <h4>Check-In</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 industry">
+                <div class="agenda_time"><p>7:30 am - 8:30 am</p></div>
+                <div class="agenda_description">
+                    <h4>Breakfast Industry Symposium†:  Clinical Evidence Supporting the Use of a New Treatment Option for Adults With Bipolar Depression: Bipolar I or II</h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
+                    <br><br>
+                    <p><i>Sponsored by Intra-Cellular  Therapies, Inc.</i>
+                    </p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 misc">
+                <div class="agenda_time"><p>8:40 am - 8:45 am</p></div>
+                <div class="agenda_description">
+                    <h4>Opening Remarks</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 cme_ce">
+                <div class="agenda_time"><p>8:45 am - 9:45 am</p></div>
+                <div class="agenda_description">
+                    <h4>Bipolar Disorder Rainbow: The Spectrum of Treatments for Depression and Mania </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Roger S. McIntyre, MD, FRCPC</a><!-- ; <a href="#" class="agenda_presenter_link ">Leslie Citrome</a>, MD, MPH</p>
+                    <br>
+                    <p><i>Sponsored by Company Name</i> --></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 misc">
+                <div class="agenda_time"><p>9:45 am - 10:30 am</p></div>
+                <div class="agenda_description">
+                    <h4>Exhibit Hall Networking Break</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 cme_ce">
+                <div class="agenda_time"><p>10:30 am - 11:30 am</p></div>
+                <div class="agenda_description">
+                    <h4>Move It on Over: Diagnosing and Treating Tardive Dyskinesia </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Stephen M. Stahl, MD, PhD, DSc (Hon)</a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 cme_ce">
+                <div class="agenda_time"><p>11:30 am - 12:30 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Anger Aside: Dealing With Agitation in People With Schizophrenia or Bipolar Disorder </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Leslie L. Citrome, MD, MPH</a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 misc">
+                <div class="agenda_time"><p>12:30 pm - 2:00 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Exhibit Hall Networking Break</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 industry">
+                <div class="agenda_time"><p>12:45 pm - 1:45 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Lunch Industry Symposium†: A Case of Parkinson's Disease Psychosis: Managing Hallucinations and Delusions Associated With Parkinson's Disease Psychosis With NUPLAZID®</h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
+                    <br><br>
+                    <p><i>Sponsored by Acadia Pharmaceuticals Inc.</i>
+                    </p>
+                </div>
+            </div>
+
+            <div class="agenda_event filterDiv april22 cme_ce">
+                <div class="agenda_time"><p>2:00 pm - 3:00 pm</p></div>
+                <div class="agenda_description">
+                    <h4> The Long Haul: COVID Complications</h4>
+                    <div class="tag_cme_ce">CME/CE Session</div> 
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Roger S. McIntyre, MD, FRCPC</a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 misc">
+                <div class="agenda_time"><p>3:00 pm - 3:30 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Exhibit Hall Networking Break </h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 cme_ce">
+                <div class="agenda_time"><p>3:30 pm - 4:15 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Jeopardy! Long-Acting Injectables</h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Stephen M. Stahl, MD, PhD, DSc (Hon)</a>; <a class="agenda_presenter_link">Leslie L. Citrome, MD, MPH</a>; <a class="agenda_presenter_link">Andrew J. Cutler, MD</a>; and <a class="agenda_presenter_link">Jonathan M. Meyer, MD</a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 cme_ce">
+                <div class="agenda_time"><p>4:15 pm - 5:15 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Throughout the Lifespan: Optimizing Treatment for ADHD </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">David W. Goodman, MD, LFAPA </a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 misc">
+                <div class="agenda_time"><p>5:15 pm - 5:45 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Exhibit Hall Networking Break</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 special cme_ce">
+                <div class="agenda_time"><p>5:45 pm - 6:45 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Remember Bekah: Interview With a Suicide Fighter</h4>
+                    <div class="tag_special">Special Event</div><div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Christine Moutier, MD </a>and <a class="agenda_presenter_link">Deborah Butturini</a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april22 industry">
+                <div class="agenda_time"><p>7:00 pm - 8:00 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Dinner Industry Symposium†:  Learn More: An Oral Treatment Option for Adults With Schizophrenia or Bipolar Disorder </h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
+                    <br><br>
+                    <p><i>Sponsored by Alkermes, Inc.</i>
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="agenda_container" id="saturday">
+            <div class="filterDiv april23 cme_ce industry special misc">
+                <div class="agenda_title">
+                    <h3>Saturday, April 23</h3>
+                    <hr>
+                    <br>                    
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 industry">
+                <div class="agenda_time"><p>7:00 am - 8:00 am</p></div>
+                <div class="agenda_description">
+                    <h4>Breakfast Industry Symposium†: Coordination of Care Between Referring Psychiatrist and Treatment Center Provider </h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
+                    <br><br>
+                    <p><i>Sponsored by Janssen Neuroscience</i>
+                    </p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 misc">
+                <div class="agenda_time"><p>8:10 am - 8:15 am</p></div>
+                <div class="agenda_description">
+                    <h4>Opening Remarks</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 cme_ce">
+                <div class="agenda_time"><p>8:15 am - 9:15 am</p></div>
+                <div class="agenda_description">
+                    <h4>Too Much or Too Little: Sleep Issues and How to Treat Them</h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Thomas L. Schwartz, MD </a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 cme_ce">
+                <div class="agenda_time"><p>9:15 am - 10:15 am</p></div>
+                <div class="agenda_description">
+                    <h4>Titration Negotiation: Switching Antipsychotics in People With Schizophrenia </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Leslie L. Citrome, MD, MPH </a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 misc">
+                <div class="agenda_time"><p>10:15 am - 10:45 am</p></div>
+                <div class="agenda_description">
+                    <h4>Exhibit Hall Networking Break</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 cme_ce">
+                <div class="agenda_time"><p>10:45 am - 12:00 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Aiming for Recovery: Optimizing Treatment for Major Depressive Disorder </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Roger S. McIntyre, MD, FRCPC </a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 misc">
+                <div class="agenda_time"><p>12:00 pm - 1:30 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Exhibit Hall Networking Break</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 industry">
+                <div class="agenda_time"><p>12:15 pm - 1:15 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Lunch Industry Symposium†: Making a Difference for Patients with Tardive Dyskinesia </h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
+                    <br><br>
+                    <p><i>Sponsored by Teva Pharmaceuticals</i>
+                    </p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 cme_ce">
+                <div class="agenda_time"><p>1:30 pm - 2:30 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Uploading Progress: Technology in Psychiatry </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Carmen Kosicek, MSN, APNP, PMHNP-BC </a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 cme_ce">
+                <div class="agenda_time"><p>2:30 pm - 3:30 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Maximizing Success for Patients With Serious Mental Illness: Promoting Treatment Engagement and Adherence to Antipsychotic Medications</h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Donna Rolin, PhD, APRN, PMHCNS-BC, PMHNP-BC</a>; and <a class="agenda_presenter_link">Jonathan M. Meyer, MD</a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 misc">
+                <div class="agenda_time"><p>3:30 pm - 4:15 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Exhibit Hall Networking Break</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 cme_ce">
+                <div class="agenda_time"><p>4:15 pm - 5:30 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Make New Friends, but Keep the Old: Optimizing Antipsychotic Treatments for Schizophrenia </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Leslie L. Citrome, MD, MPH</a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 cme_ce">
+                <div class="agenda_time"><p>5:30 pm - 6:30 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Ups and Downs: Diagnosing and Treating Depression Throughout the Female Lifespan</h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Mary C. Kimmel, MD </a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april23 industry">
+                <div class="agenda_time"><p>6:45 pm - 7:45 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Dinner Industry Symposium†: An Adjunctive Option for Adults With Major Depressive Disorder (MDD) Experiencing Partial Response to an Antidepressant</h4>
+                    <div class="tag_industry_symp">Industry-Sponsored (non-CME/CE)</div>
+                    <br><br>
+                    <p><i>Sponsored by Otsuka America Pharmaceutical, Inc. </i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="agenda_container" id="sunday">
+            <div class="filterDiv april24 cme_ce industry special misc">
+                <div class="agenda_title">
+                    <h3>Sunday, April 24</h3>
+                    <hr>
+                    <br>                    
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april24 misc">
+                <div class="agenda_time"><p>7:00 am - 8:00 am</p></div>
+                <div class="agenda_description">
+                    <h4>Breakfast</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april24 misc">
+                <div class="agenda_time"><p>8:10 am - 8:15 am</p></div>
+                <div class="agenda_description">
+                    <h4>Opening Remarks</h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april24 cme_ce">
+                <div class="agenda_time"><p>8:15 am - 9:30 am</p></div>
+                <div class="agenda_description">
+                    <h4>Everything Hurts: Pain Management in the Context of Psychiatric Comorbidities </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">Andrew J. Cutler, MD </a></p>
+                    
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april24 misc">
+                <div class="agenda_time"><p>9:30 am - 9:45 am</p></div>
+                <div class="agenda_description">
+                    <h4>Networking Break </h4>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april24 cme_ce">
+                <div class="agenda_time"><p>9:45 am - 11:00 am</p></div>
+                <div class="agenda_description">
+                    <h4>ADHD, Female Hormones, and Menopause: The Little We Know From the Research</h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br><br>
+                    <p><a class="agenda_presenter_link">David W. Goodman, MD, LFAPA </a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april24 cme_ce">
+                <div class="agenda_time"><p>11:00 am - 12:15 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Biggest Mistakes in Psychopharm  </h4>
+                    <div class="tag_cme_ce">CME/CE Session</div>
+                    <br>
+                    <br>
+                    <p><a class="agenda_presenter_link">Thomas L. Schwartz, MD</a>; <a class="agenda_presenter_link">Andrew J. Cutler, MD</a>; and <a class="agenda_presenter_link">Jonathan M. Meyer, MD</a></p>
+                </div>
+            </div>
+            <div class="agenda_event filterDiv april24 misc">
+                <div class="agenda_time"><p>12:15 pm</p></div>
+                <div class="agenda_description">
+                    <h4>Closing Remarks</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="agenda_paragraph"><br><br><p><small>†The content of all Industry-Sponsored non-CME/CE events (Industry Symposia, Disease State Sessions, and Poster Sessions) and the views expressed therein are those of the presenting entity and not of NEI. Non-CME/CE events are not part of the scientific program and do not provide CME/CE credit. By attending or opening a non-CME/CE event, the attendee opts in to receive follow-up information from the commercial sponsor. Any meals are provided by NEI.</small></p></div>
+   
+        <div class="to_top_container"><button class="to_top_btn" id="toTop" type="button"><img src="https://cdn.neiglobal.com/content/website/images/to_top_arrow_white.png"></button></div>
+        
+
+    </div>
+
+   <script>
+    // Filter by Feature
+    filterSelection("all")
+    function filterSelection(c) {
+      var x, i;
+      x = document.getElementsByClassName("filterDiv");
+      if (c == "all") c = "";
+      for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+      }
+    }
+    
+    function w3AddClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+      }
+    }
+    
+    function w3RemoveClass(element, name) {
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+          arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+      }
+      element.className = arr1.join(" ");
+    }
+    
+    var btnContainer = document.getElementById("myBtnContainer");
+    var btns = btnContainer.getElementsByClassName("btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function(){
+        var current = document.getElementsByClassName("selected");
+        current[0].className = current[0].className.replace(" selected", "");
+        this.className += " selected";
+      });
+    }
+
+
+    //Scroll to Top BTN
+
+
+    var scrollToTopBtn = document.getElementById("toTop");
+    var rootElement = document.documentElement;
+
+    function scrollToTop() {
+    // Scroll to top logic
+    rootElement.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+    }
+    scrollToTopBtn.addEventListener("click", scrollToTop);
+
+    </script>
+
+</body>
+</html>
